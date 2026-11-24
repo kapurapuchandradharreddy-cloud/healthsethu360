@@ -49,28 +49,16 @@ HealthSethu360 follows a modular full-stack architecture with independently orga
 
 ### High-Level Architecture
 
-```text
-                  HealthSethu360
-                         |
-             +-----------+-----------+
-             |                       |
-       React Frontend           REST API Layer
-        (Port 5173)              (Port 8080)
-             |                       |
-             |                 Spring Boot
-             |                       |
-             |              Spring Security
-             |                       |
-             |                  Services
-             |                       |
-             |               JDBC / JdbcTemplate
-             |                       |
-             +-----------------------+
-                         |
-                    MySQL 8.0
-                 (Port 3306)
-```
+## 🏗️ System Architecture
 
+```mermaid
+flowchart TB
+    A["🏥 HealthSethu360"]
+    A --> B["🖥️ React Frontend"]
+    A --> C["⚙️ Spring Boot Backend"]
+    B <-->|"REST API · JSON"| C
+    C --> D[("🗄️ MySQL Database")]
+```
 ### Architectural Components
 
 **Frontend Layer**
