@@ -49,16 +49,45 @@ HealthSethu360 follows a modular full-stack architecture with independently orga
 
 ### High-Level Architecture
 
-## 🏗️ System Architecture
+
+## 2. Monorepo Architecture
+
+HealthSethu360 follows a modular full-stack architecture connecting the React frontend, Spring Boot REST API, and MySQL relational database.
 
 ```mermaid
 flowchart TB
-    A["🏥 HealthSethu360"]
+    A(["🏥 HealthSethu360"])
+
     A --> B["🖥️ React Frontend"]
     A --> C["⚙️ Spring Boot Backend"]
-    B <-->|"REST API · JSON"| C
-    C --> D[("🗄️ MySQL Database")]
+
+    B --> B1["React.js · JavaScript · CSS3"]
+    B1 --> B2["Responsive UI & Dashboards"]
+
+    C --> C1["Spring Security"]
+    C1 --> C2["REST API Controllers"]
+    C2 --> C3["Business Services"]
+    C3 --> C4["JDBC / JdbcTemplate"]
+
+    B2 <-->|"REST API / JSON"| C2
+
+    C4 --> D[("🗄️ MySQL 8.0")]
+
+    D --> E["Patients · Doctors · Appointments"]
+    D --> F["SmartQueue · Emergency · Beds"]
+    D --> G["Pharmacy · Billing · Analytics"]
+
+    classDef main fill:#142B45,color:#fff,stroke:#0D9488
+    classDef front fill:#DBEAFE,color:#1E40AF,stroke:#2563EB
+    classDef back fill:#D1FAE5,color:#065F46,stroke:#0D9488
+    classDef db fill:#FCE7F3,color:#9D174D,stroke:#DB2777
+
+    class A main
+    class B,B1,B2 front
+    class C,C1,C2,C3,C4 back
+    class D,E,F,G db
 ```
+
 ### Architectural Components
 
 **Frontend Layer**
