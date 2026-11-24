@@ -39,7 +39,7 @@ The project follows a modular full-stack architecture, separating the React fron
 | Database | MySQL 8.0 |
 | Build Tool | Apache Maven |
 | Version Control | Git, GitHub |
-| Development Environment | VS Code, Google Antigravity |
+| Development Environment | VS Code|
 
 ---
 
